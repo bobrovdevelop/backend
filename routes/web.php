@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test', function () {
-    dd('test');
+Route::get('/job', function () {
+    \App\Jobs\TestJob::dispatch();
+});
+
+Route::get('/check',function (){
+    dd(\App\Models\Record::all());
 });
